@@ -1,5 +1,8 @@
-package Section_6_OOP_Part_1_Classes_Constructors_Inheritance._2;
+package Section_6_OOP_Part_1_Classes_Constructors_Inheritance._2_Constructors_Chalange;
 
+/**
+ * Created by dev on 8/3/15.
+ */
 public class Account {
     private String number;
     private double balance;
@@ -8,34 +11,31 @@ public class Account {
     private String customerPhoneNumber;
 
     public Account() {
-        this("123", 0.00, "Default Name", "Default Email address", "Default phone number");
-        System.out.println("Empty Constructor called");
+        this("56789", 2.50, "Default name", "Default address", "default phone");
+        System.out.println("Empty constructor called");
     }
 
-    public Account(String number, double balance, String customerName, String customerEmailAddress, String customerPhoneNumber) {
+    public Account(String number, double balance, String customerName, String customerEmailAddress,
+                   String customerPhoneNumber) {
+        System.out.println("Account constructor with parameters called");
         this.number = number;
         this.balance = balance;
         this.customerName = customerName;
         this.customerEmailAddress = customerEmailAddress;
         this.customerPhoneNumber = customerPhoneNumber;
-        System.out.println("Account Constructor with parameters called");
-    }
-
-    public Account(String customerName, String customerEmailAddress, String customerPhoneNumber) {
-        this("9999",100.0,customerName,customerEmailAddress,customerPhoneNumber);
     }
 
     public void deposit(double depositAmount) {
         this.balance += depositAmount;
-        System.out.println("Deposit of " + depositAmount + "made. New balance is " + this.balance);
+        System.out.println("Deposit of " + depositAmount + " made. New balance is " + this.balance);
     }
 
     public void withdrawal(double withdrawalAmount) {
-        if (balance - withdrawalAmount < 0) {
+        if (this.balance - withdrawalAmount <= 0) {
             System.out.println("Only " + this.balance + " available. Withdrawal not processed");
         } else {
             this.balance -= withdrawalAmount;
-            System.out.println("Withdrawal of " + withdrawalAmount + " processed. Remaining balance = " + this.balance);
+            System.out.println("Withdrawal of " + withdrawalAmount + " processed, Remaining balance = " + this.balance);
         }
     }
 
