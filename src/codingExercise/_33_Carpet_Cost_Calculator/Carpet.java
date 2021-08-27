@@ -1,4 +1,4 @@
-package codingExercise._33;
+package codingExercise._33_Carpet_Cost_Calculator;
 
 public class Carpet {
     private double cost;
